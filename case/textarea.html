@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Textarea</title>
+	<style type="text/css">
+		.container pre,
+		.container textarea {
+			margin: 0;
+			padding: 0;
+			border: 0;
+			outline: 0;
+		}
+
+		.container {
+			position: relative;
+		}
+
+		.container textarea {
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			resize: none;
+			overflow: hidden;	
+			/*allow padding*/
+			box-sizing: border-box;				
+		}
+
+		.container pre {
+			display: block;
+			visibility: hidden;
+			min-height: 100px;		  			
+		}
+
+		/*the follwing settings should to be setted to keep pre and textarea the same size(width height padding)*/
+		.container pre,
+		.container textarea {
+		  white-space: pre-wrap;
+		  word-wrap: break-word;
+		  font-size: 14px;
+			padding: 5px;
+		}
+	</style>
+	<script type="text/javascript">
+		function load() {
+			addTextareaEvent();
+		}
+
+		function addTextareaEvent() {
+			var textarea = document.querySelector('textarea');
+			var span = document.querySelector('span');
+
+			textarea.addEventListener('input', function (event) {
+			  span.textContent = textarea.value;
+			});
+
+			//init span content if textarea has value
+			span.textContent = textarea.value;
+		}
+	</script>
+</head>
+<body onload="load()">
+	<div class="container">
+		<pre><span></span><br></pre>
+		<textarea placeholder="请输入..."></textarea>
+	</div>
+</body>
+</html>
