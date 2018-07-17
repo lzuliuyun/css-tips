@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>float-margin-float</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .left {
+      width: 200px;
+      background-color: yellow;
+      float: left;
+      height: 100vh;
+    }
+
+    .right {
+      width: 200px;
+      background-color: green;
+      float: right;
+      height: 100vh;
+    }
+
+    .middle {
+      margin-left: 220px;
+      margin-right: 220px;
+      background-color: red;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="left">left-float</div>
+  <div class="right">right-float
+    <div>
+      <br>
+      <span>1. 当宽度小于左右两边宽度之和时，右侧栏会被挤下去；2. html的结构不正确</span>
+      <br>
+      <br>
+      <span>注意：结构是left+right放在前面，是因为浮动元素的前面如果是标准流的元素，自己将会换行处理，因此浮动元素必须都放在最前面</span>
+    </div>
+  </div>
+  <div class="middle">middle-margin</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .layout {
+      /*   width: 960px; */
+      /*设置width当浏览器窗口宽度小于960px时，单列布局不会自适应。*/
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .header {
+      background-color: red;
+    }
+
+    .content {
+      background-color: green;
+    }
+
+
+    .footer {
+      background-color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="header">
+    <div class="layout">头部</div>
+  </div>
+  <div id="content" class="layout">内容</div>
+  <div id="footer">
+    <div class="layout">尾部</div>
+  </div>
+</body>
+
+</html>

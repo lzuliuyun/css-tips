@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>float-margin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .left {
+      position: absolute;
+      right: 0;
+      background-color: pink;
+      width: 250px;
+      height: 100%;
+      text-align: center;
+    }
+
+    .right {
+      height: 100%;
+      margin-right: 250px;
+      background-color: yellow;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="left">自适应-margin</div>
+  <div class="right">定宽-position</div>
+</body>
+</html>

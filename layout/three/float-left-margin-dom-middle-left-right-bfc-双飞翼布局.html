@@ -1,0 +1,62 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>float-bfc</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .wrapper {
+      overflow: hidden;
+    }
+
+    .middle {
+      width: 100%;
+      float: left;
+    }
+
+    .middle .main {
+      margin: 0 220px;
+      background-color: red;
+    }
+
+    .left {
+      width: 200px;
+      height: 300px;
+      float: left;
+      background-color: green;
+      margin-left: -100%;
+    }
+
+    .right {
+      width: 200px;
+      height: 300px;
+      float: left;
+      background-color: yellow;
+      margin-left: -200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="middle">
+      <div class="main">middle
+        <div>
+          <br>
+          布局比较巧妙，首先三个div都是浮动，根据浮动的原理，当宽度挤不下去时，会自动换行。
+          <br>首先middle为第一个浮动元素，占满100%，接着left为第二个浮动元素，通过margin-left: -100%, 移动到第一个元素的最前面（可以假想这几个浮动元素都是在一行，可以通过margin调整自身位置）</span>
+          <br>最后right元素相对左边偏移自身宽度
+        </div>
+      </div>
+    </div>
+    <div class="left">left</div>
+    <div class="right">right</div>
+  </div>
+</body>
+
+</html>
